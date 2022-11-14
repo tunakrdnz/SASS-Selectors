@@ -1,0 +1,58 @@
+.title-style, .container-sub-title, .container-title {
+  width: fit-content;
+  color: green;
+  border-bottom: 0.0625rem solid blue;
+  text-align: center;
+  grid-column: span 4;
+}
+
+.container {
+  color: blue;
+  font-size: 1px solid;
+  place-items: center;
+  text-align: center;
+  border: 0.125rem solid red;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.container-sub-title {
+  border: 0.125rem solid red;
+  padding: 1rem;
+}
+.container .articles {
+  color: blue;
+  font-size: 1rem;
+  place-items: center;
+  text-align: center;
+  grid-column: span 4;
+  display: flex;
+  width: 95%;
+}
+.container .articles .article {
+  color: blue;
+  font-size: 1rem;
+  place-items: center;
+  text-align: center;
+  border: 0.125rem solid green;
+}
+.container .articles .article .text {
+  height: 6.25rem;
+  margin-top: 3.125rem;
+}
+.container .articles .article:nth-child(odd) .text {
+  color: red;
+}
+.container .footer {
+  color: green;
+  font-size: 1rem;
+  place-items: center;
+  text-align: center;
+  grid-column: span 4;
+  border: 0.125rem solid blue;
+  padding: 2.5rem;
+  margin: 1.875rem;
+  width: 90%;
+  font-size: 1.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */

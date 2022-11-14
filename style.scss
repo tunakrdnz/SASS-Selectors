@@ -1,0 +1,71 @@
+@use "../sass_exercise_3-functions_modules/variables.scss" as v;
+@use "../sass_exercise_3-functions_modules/functions.scss" as f;
+
+
+
+@mixin base($color, $font-size: f.rem-convert()) {
+    color: $color;
+    font-size: $font-size;
+    place-items: center;
+    text-align: center;
+    
+}
+
+
+.title-style {
+    width: fit-content;
+    color: v.$color-tertiary;
+    border-bottom: f.rem-convert(1) solid v.$color-secondary;
+    text-align: center;
+    grid-column: span 4;
+}
+  
+
+
+.container {
+    @include base(v.$color-secondary,v.$border-lines);
+    border: f.rem-convert(2) solid red;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    &-title {
+        @extend .title-style;
+        
+    }
+    &-sub-title {
+        @extend .title-style;
+        border: f.rem-convert(2) solid red;
+        padding: f.rem-convert(16);
+
+    }
+
+    .articles {
+        @include base(v.$color-secondary,f.rem-convert());
+        grid-column: span 4;
+        display: flex;
+        width: 95%;
+        
+        
+        .article {
+            @include base(v.$color-secondary);
+            border: f.rem-convert(2) solid green;
+            .text {
+               height: f.rem-convert(100);
+               margin-top: f.rem-convert(50);
+                
+            }
+        }
+        .article:nth-child(odd) .text {
+            color:v.$color-primary;
+        }
+    }
+    .footer {
+        @include base(v.$color-tertiary,f.rem-convert());
+        grid-column:span 4;
+        border: f.rem-convert(2) solid blue;
+        padding: f.rem-convert(40);
+        margin: f.rem-convert(30);
+        width: 90%;
+        font-size: f.rem-convert(24);
+    }
+   
+}
